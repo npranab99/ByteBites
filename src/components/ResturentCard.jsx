@@ -1,10 +1,12 @@
-import React from 'react';
-import { CDN_URL } from '../utils/constants';
+import React, { useEffect, useState } from 'react';
+import { CDN_URL, MENU_URL } from '../utils/constants';
+import axios from 'axios';
 
 
 const ResturentCard = (resData) => {
     // console.log(CDN_URL)
     const {name, cuisines, avgRating, sla, cloudinaryImageId}= resData?.resData?.info;
+
 
     return (
         <div className='res-card' >

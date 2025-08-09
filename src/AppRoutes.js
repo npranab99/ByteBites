@@ -6,6 +6,8 @@ import Menu from './components/Menu';
 
 const About = React.lazy(()=> import('./components/About'));
 const Resturents = React.lazy(()=> import('./components/Body'))
+const UserRegistration =React.lazy(()=>import('./components/UserRegistration'))
+const ItemCart = React.lazy(()=>import('./components/ItemCart'))
 
 const AppRoutes = () => {
 
@@ -17,7 +19,8 @@ const AppRoutes = () => {
         <Route exact path={routePath.home} element={<Resturents />} />
         <Route exact path={routePath.about} element={<About />} />
         <Route exact path={routePath.menu} element={<Menu />} />
-        {routePath.menu}
+        <Route exact path={routePath.cart} element={<ItemCart/>}/>
+        <Route exact path={routePath.login} element={<Suspense fallback={<h2>loading...</h2>}><UserRegistration/></Suspense>} />
       </Routes>
     </Suspense>
   );

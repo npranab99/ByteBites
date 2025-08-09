@@ -3,6 +3,8 @@ import ResturantCard from './ResturentCard'
 import { useState, useEffect } from 'react';
 import ShimmerUI from './ShimmerUI';
 import { Link } from 'react-router-dom';
+import SearchBar from './SearchBar';
+import { useSelector } from 'react-redux';
 // import SearchBar from './SearchBar';
 // import data from '../utils/mockData';
 
@@ -46,13 +48,14 @@ const Body = () => {
     // if(filteredData.length === 0) {
     //     return <ShimmerUI/>
     // }
-
-
-
     
     //search////////////
 
     const[searchItem, setSearchItem] = useState('');
+
+    const searchItemStore = useSelector((store)=>store.searchReducer.searchValues)
+
+    console.log(searchItemStore,"printf")
     
     const handleSearchBox = (e) => {
         setSearchItem(e.target.value);

@@ -1,7 +1,9 @@
 const routePath = {
     home : '/restaurants',
     about:'/about',
-    menu: '/restaurants/:resId'
+    menu: '/restaurants/:resId',
+    login : '/login',
+    cart : '/cart'
     
 }
 
