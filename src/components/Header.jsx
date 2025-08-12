@@ -8,6 +8,7 @@ import SearchBar from './SearchBar';
 const Header = () => {
 
     const cartItems = useSelector((store)=>store.cartReducer.items)
+    const restaurantList = useSelector((state) => state.restaurantReducer.list || []);
 
     const navigate = useNavigate();
 
@@ -30,22 +31,22 @@ const Header = () => {
     const handleCart = ()=>{
         navigate(routePath.cart)
     }
-
-
+    
+    
     return (
         
         <div className='header'>
-        <div className='logo-container'>
+            <div className='logo-container'>
             <img className='logo' src='https://png.pngtree.com/template/20200610/ourmid/pngtree-food-delivery-logo-design-image_381319.jpg'/>
         </div>
-
-        <SearchBar/>
+        <SearchBar />
         <div className='nav-items'>
             <ul>
-            <li onClick={handleHome}>Home</li>
-            <li onClick={handleCart}>Cart - {cartItems.length}</li>
-            <li onClick={handleContacts}>Contacts</li>
-            <li onClick={handleAbout}>About</li>
+                <li onClick={handleHome}>Home</li>
+                <li onClick={handleCart}>Cart - {cartItems.length}</li>
+                <li onClick={handleContacts}>Contacts</li>
+                <li onClick={handleAbout}>About</li>
+                <li onClick={handleLogin}>Login</li>
             </ul>
         </div>
         </div>
@@ -53,4 +54,3 @@ const Header = () => {
 }
 
 export default Header;
- 
